@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    padding: 0;
+    &__list-link {
+        text-decoration: none;
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+h1{
+    color: #c00;
+}
