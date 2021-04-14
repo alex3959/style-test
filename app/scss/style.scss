@@ -14,6 +14,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 16px 0;
+    @media (max-width: 991.98px) {
+        justify-content: left;
+    }
     &__title {
         font-family: "Helvetica Neue";
         font-size: 14px;
@@ -21,7 +25,12 @@
         font-style: normal;
         letter-spacing: 0.9px;
         line-height: 20px;
+        text-transform: uppercase;
         flex-basis: 20%;
+        margin: 8px 25px 0 40px;
+        @media (max-width: 991.98px) {
+            flex-basis: auto;
+        }
     }
 
     // .menu__list
@@ -30,6 +39,10 @@
         display: flex;
         justify-content: space-between;
         flex-basis: 54%;
+        margin-top: 8px;
+        @media (max-width: 991.98px) {
+            display: none;
+        }
     }
 
     // .menu__list-links
@@ -41,22 +54,46 @@
         font-style: normal;
         letter-spacing: normal;
         line-height: 16px;
+        position: relative;
+        &:hover {
+            color: #dc1414;
+        }
+        &--burger-icon {
+            &::before {
+                content: "";
+                position: absolute;
+                display: block;
+                background-image: url(../images/Hamburger_Menu.svg);
+                width: 12px;
+                height: 9px;
+                top: 5px;
+                left: -20px;
+            }
+        }
+    }
+
+    // .menu__submenu
+
+    &__submenu {
+        position: absolute;
+        border: 1px solid #babec2;
+        background-color: #fff;
+        padding: 25px;
+    }
+
+    // .menu__submenu-item
+
+    &__submenu-item {
+    }
+
+    // .menu__submenu-links
+
+    &__submenu-links {
     }
 
     // .menu__btn
 
     &__btn {
         display: none;
-    }
-}
-.logo {
-    // .logo__link
-
-    &__link {
-    }
-
-    // .logo__img
-
-    &__img {
     }
 }
