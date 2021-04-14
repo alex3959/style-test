@@ -1,6 +1,62 @@
-@import 'vars';
-@import 'fonts';
-@import 'reset';
-@import 'libs';
-@import 'global';
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "global";
 
+.header {
+    border-bottom: 1px solid #babec2;
+}
+
+.menu {
+    // .menu__title
+    color: #485058;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__title {
+        font-family: "Helvetica Neue";
+        font-size: 14px;
+        font-weight: 300;
+        font-style: normal;
+        letter-spacing: 0.9px;
+        line-height: 20px;
+        flex-basis: 20%;
+    }
+
+    // .menu__list
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        flex-basis: 54%;
+    }
+
+    // .menu__list-links
+
+    &__list-links {
+        font-family: "Helvetica Neue";
+        font-size: 16px;
+        font-weight: 300;
+        font-style: normal;
+        letter-spacing: normal;
+        line-height: 16px;
+    }
+
+    // .menu__btn
+
+    &__btn {
+        display: none;
+    }
+}
+.logo {
+    // .logo__link
+
+    &__link {
+    }
+
+    // .logo__img
+
+    &__img {
+    }
+}
