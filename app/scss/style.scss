@@ -45,6 +45,10 @@
         }
     }
 
+    &__list-item {
+        position: relative;
+    }
+
     // .menu__list-links
 
     &__list-links {
@@ -54,11 +58,14 @@
         font-style: normal;
         letter-spacing: normal;
         line-height: 16px;
-        position: relative;
+        padding: 12px;
+        display: block;
+        transition: 0.2s ease;
         &:hover {
             color: #dc1414;
         }
         &--burger-icon {
+            position: relative;
             &::before {
                 content: "";
                 position: absolute;
@@ -66,8 +73,16 @@
                 background-image: url(../images/Hamburger_Menu.svg);
                 width: 12px;
                 height: 9px;
-                top: 5px;
-                left: -20px;
+                top: 16px;
+                left: -10px;
+            }
+        }
+    }
+
+    &__list-item {
+        &:hover {
+            & .menu__submenu {
+                display: block;
             }
         }
     }
@@ -76,19 +91,26 @@
 
     &__submenu {
         position: absolute;
-        border: 1px solid #babec2;
-        background-color: #fff;
-        padding: 25px;
+        background-color: #ffffff;
+        top: 40px;
+        left: -10px;
+        padding: 10px 0 10px !important;
+        width: 250px;
+        display: none;
+        box-shadow: 0 0 10px #babec2;
+        &--position-right {
+            left: unset;
+            right: 0;
+            text-align: right;
+        }
     }
-
-    // .menu__submenu-item
-
-    &__submenu-item {
-    }
-
-    // .menu__submenu-links
 
     &__submenu-links {
+        padding: 10px;
+        display: block;
+        &:hover {
+            box-shadow: 0 3px 3px #babec2;
+        }
     }
 
     // .menu__btn
