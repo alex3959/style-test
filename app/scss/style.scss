@@ -15,7 +15,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 16px 0;
-    @media (max-width: 991.98px) {
+    @media (max-width: 1100px) {
         justify-content: left;
     }
     &__title {
@@ -28,7 +28,7 @@
         text-transform: uppercase;
         flex-basis: 20%;
         margin: 8px 25px 0 40px;
-        @media (max-width: 991.98px) {
+        @media (max-width: 1100px) {
             flex-basis: auto;
         }
     }
@@ -40,7 +40,7 @@
         justify-content: space-between;
         flex-basis: 54%;
         margin-top: 8px;
-        @media (max-width: 991.98px) {
+        @media (max-width: 1100px) {
             display: none;
         }
     }
@@ -98,6 +98,7 @@
         width: 250px;
         display: none;
         box-shadow: 0 0 10px #babec2;
+        z-index: 10;
         &--position-right {
             left: unset;
             right: 0;
@@ -123,30 +124,36 @@
 // section
 
 .content {
+    // .content__header
+    &__header {
+        padding-top: 20px;
+        padding-bottom: 19px;
+    }
+
     // .content__top
 
     &__top {
-        padding: 20px 0;
-    }
-
-    // .content__top-wrap
-
-    &__links-wrap {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        font-family: "Helvetica Neue";
+        color: #485058;
+        font-size: 16px;
     }
 
-    // .content__order-link
+    // .content__order-call
 
-    &__order-link {
-        display: block;
-        border-bottom: 2px dashed;
+    &__order-call {
+        color: #dc1414;
+        border-bottom: 1px dashed #dc1414;
+        &:hover {
+            transform: scale(1.1);
+        }
     }
 
-    // .content__social-list
+    // .content__social
 
-    &__social-list {
+    &__social {
         display: flex;
         justify-content: space-between;
         width: 440px;
@@ -155,44 +162,205 @@
     // .content__social-item
 
     &__social-item {
+        margin-left: 25px;
+        position: relative;
+        transition: 0.3s ease;
     }
 
-    // .content__social-links
+    // .content__social-item--whatsup
 
-    &__social-links {
+    &__social-item--whatsup {
+        &:hover {
+            color: #25d366;
+            font-weight: 600;
+        }
+        &::before {
+            content: "";
+            background-image: url("../images/whatsup.svg");
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            display: block;
+            left: -35px;
+            top: -5px;
+        }
+    }
+
+    // .content__social-item--telegram
+
+    &__social-item--telegram {
+        &:hover {
+            color: #0088cc;
+            font-weight: 600;
+        }
+        &::before {
+            content: "";
+            background-image: url("../images/telegram.svg");
+            position: absolute;
+            width: 26px;
+            height: 26px;
+            display: block;
+            left: -35px;
+            top: -5px;
+        }
+    }
+
+    // .content__social-item--phone
+
+    &__social-item--phone {
+        &:hover {
+            color: #dc1414;
+        }
     }
 
     // .content__banner
 
     &__banner {
         background-image: url(../images/banner-bg.jpg);
-        background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+        background-repeat: no-repeat;
+        padding-bottom: 16px;
+    }
+
+    // .content__wrap
+
+    &__wrap {
+        padding-top: 90px;
+        margin-left: 224px;
+        @media (max-width: 1100px) {
+            max-width: 620px;
+            margin: 0 auto;
+        }
+        @media (max-width: 768px) {
+            padding-top: 124px;
+        }
     }
 
     // .content__title
 
     &__title {
+        font-family: "Playfair Display";
+        font-size: 56px;
+        color: #485058;
+        text-transform: uppercase;
+        font-weight: 400;
     }
 
     // .content__subtitle
 
     &__subtitle {
+        font-family: "Playfair Display";
+        font-size: 40px;
+        color: #485058;
+        font-weight: 400;
     }
 
     // .content__service
 
     &__service {
+        display: flex;
+        align-items: center;
+        padding-top: 26px;
+        padding-bottom: 48px;
+        @media (max-width: 1100px) {
+            justify-content: center;
+        }
     }
 
     // .content__service-img
 
     &__service-img {
+        width: 128px;
+        height: 128px;
     }
 
     // .content__service-text
 
     &__service-text {
+        margin-left: 16px;
+        width: 468px;
+        font-size: 18px;
+        line-height: 26px;
+        font-family: "Helvetica Neue";
+        & span {
+            color: #dc1414;
+        }
+    }
+
+    // .content__form
+
+    &__form {
+        width: 380px;
+        padding-bottom: 24px;
+    }
+
+    // .content__form-input
+
+    &__form-input {
+        padding: 18px 16px 17px;
+        width: 100%;
+        border-radius: 8px;
+        border: 1px solid #babec2;
+        background-color: #ffffff;
+        font-family: "Helvetica Neue";
+        font-size: 18px;
+        font-weight: 300;
+        margin-bottom: 16px;
+        &:focus {
+            outline: none;
+            border: 1px solid #dc1414;
+        }
+    }
+
+    // .content__form-btn
+
+    &__form-btn {
+        padding: 14px 60px 18px;
+        color: #ffffff;
+        font-family: "Helvetica Neue";
+        font-size: 20px;
+        background-color: #dc1414;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        &:active {
+            transform: scale(0.99);
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+
+    // .content__banner-link
+
+    &__banner-link {
+        color: #485058;
+        font-family: "Helvetica Neue";
+        font-size: 18px;
+        text-decoration: underline;
+        transition: 0.2s ease;
+        &:hover {
+            color: #dc1414;
+        }
+    }
+
+    // .content__text-info
+
+    &__text-info {
+        width: 380px;
+        margin-top: 82px;
+        color: #808890;
+        font-family: "Helvetica Neue";
+        font-size: 12px;
+        font-weight: 300;
+        & a {
+            text-decoration: underline;
+        }
+        @media (max-width: 1100px) {
+            margin-top: 82px;
+        }
+        @media (max-width: 768px) {
+            margin-top: 223px;
+        }
     }
 }
