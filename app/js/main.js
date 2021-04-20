@@ -8,7 +8,7 @@ let popupBtn = document.querySelectorAll('.popup__btn');
 
 
 menuBtn.addEventListener('click', () => {
-    menuWrap.style = 'display: block';
+    menuWrap.style = 'left: -1px';
     listLogo.style = 'display: block';
     menuCancelBtn.style = 'display: block';
     document.body.style.overflow = 'hidden'
@@ -19,6 +19,7 @@ menuCancelBtn.addEventListener('click', () => {
     listLogo.style = '';
     menuCancelBtn.style = '';
     document.body.style.overflow = ''
+    menuWrap.style = '';
 })
 
 contentOrderCall.addEventListener('click', () => {
